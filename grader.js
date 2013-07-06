@@ -33,7 +33,8 @@ var CHECKSFILE_DEFAULT = "checks.json";
 var assertFileExists = function(infile)
 {
     var instr = infile.toString();
-    if(!fs.existsSync(instr)) {
+    if (! fs.existsSync(instr))
+    {
         console.log("%s does not exist. Exiting.", instr);
         process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
     }
@@ -55,7 +56,7 @@ var checkHtmlFile = function(htmlfile, checksfile)
     $ = cheerioHtmlFile(htmlfile);
     var checks = loadChecks(checksfile).sort();
     var out = {};
-    for(var ii in checks)
+    for (var ii in checks)
     {
         var present = $(checks[ii]).length > 0;
         out[checks[ii]] = present;
