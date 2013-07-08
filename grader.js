@@ -109,10 +109,14 @@ if (require.main == module)
               );
   }
   var checkJson;
-  if (program.file)
+  if (program.url == undefined)
     checkJson = checkHtml(program.file, program.checks, 'html');
   else
-    checkJson = checkHtml(result, program.checks, 'url');
+  {
+    console.log("program.url",program.url);
+    checkJson = checkHtml(program.url, program.checks, 'url');
+
+  }
   var outJson = JSON.stringify(checkJson, null, 4);
   console.log(outJson);
 }
