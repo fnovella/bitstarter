@@ -99,9 +99,9 @@ if (require.main == module)
     restler.get(program.url).on('complete', restlerGetCallback);
   else
   {
-      var checkJson = checkHtml(fs.readFileSync(program.file), program.checks);
-      var outJson   = JSON.stringify(checkJson, null, 4);
-      console.log(outJson);
+    var checkJson = checkHtml(fs.readFileSync(program.file), program.checks);
+    var outJson   = JSON.stringify(checkJson, null, 4);
+    console.log(outJson);
   }
 }
 else
