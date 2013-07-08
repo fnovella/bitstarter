@@ -96,9 +96,7 @@ if (require.main == module)
     .parse(process.argv);
 
   if (program.url)
-  {
     restler.get(program.url).on('complete', restlerGetCallback);
-  }
   else
   {
       var checkJson = checkHtml(fs.readFileSync(program.file), program.checks);
